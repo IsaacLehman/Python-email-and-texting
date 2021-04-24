@@ -70,20 +70,20 @@ def send_email(to, subject, body, is_HTML=False):
 
 
 # TEXT
-def send_text(subject, msg):
+def send_my_text(subject, msg):
     send_text(YOUR_NUMBER, YOUR_HOST, subject, msg)
 
 
 # EMAIL
-def send_email(subject, msg, is_HTML=False):
+def send_my_email(subject, msg, is_HTML=False):
     send_text(YOUR_EMAIL, subject, msg, is_HTML)
 
 
 # EZAMPLES:
 '''
-send_text(YOUR_NUMBER, YOUR_HOST, 'Subject', 'Body')
+send_my_text('Subject', 'Body')
 
-send_email(YOUR_EMAIL, 'Subject', 'Body', False)
+send_my_email('Subject', 'Body', False)
 
 # Create HTML message
 html = """\
@@ -97,5 +97,5 @@ html = """\
   </body>
 </html>
 """
-send_email(YOUR_EMAIL, 'html-test-message', html, True)
+send_my_email('html-test-message', html, True)
 '''
