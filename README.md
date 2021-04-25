@@ -30,7 +30,7 @@
         Provided Functions: -> Example usage below
             - open_conn()
             - close_conn()
-            - send_txt(msg, one_time=False)
+            - send_sms(msg, one_time=False)
             - send_email(msg, one_time=False)
 
     EXAMPLES:
@@ -40,7 +40,7 @@
         my_messanger = Messanger(<your gmail username>, <your gmail password>)
 
         msg = SMS(number, gateway, subject, body)
-        my_messanger.send_txt(msg, one_time=True)
+        my_messanger.send_sms(msg, one_time=True)
 
         msg = Email(to, subject, body)
         my_messanger.send_email(msg, one_time=True)
@@ -53,7 +53,7 @@
 
         # send as many messages as you want here
         msg = SMS(number, gateway, subject, body)
-        my_messanger.send_txt(msg)
+        my_messanger.send_sms(msg)
 
         msg = Email(to, subject, body)
         my_messanger.send_email(msg)
