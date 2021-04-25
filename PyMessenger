@@ -39,7 +39,7 @@
         my_messanger = Messanger(<your gmail username>, <your gmail password>)
 
         msg = SMS(number, gateway, subject, body)
-        my_messanger.send_txt(msg, one_time=True)
+        my_messanger.send_sms(msg, one_time=True)
 
         msg = Email(to, subject, body)
         my_messanger.send_email(msg, one_time=True)
@@ -52,7 +52,7 @@
 
         # send as many messages as you want here
         msg = SMS(number, gateway, subject, body)
-        my_messanger.send_txt(msg)
+        my_messanger.send_sms(msg)
 
         msg = Email(to, subject, body)
         my_messanger.send_email(msg)
@@ -130,7 +130,7 @@ class Messanger:
         # CLOSE CONNECTION TO SMTP SERVICE
         self.conn.close()
 
-    def send_txt(self, msg, one_time=False):
+    def send_sms(self, msg, one_time=False):
         if one_time:
             self.open_conn()
 
@@ -164,3 +164,4 @@ class Messanger:
 
         if one_time:
             self.close_conn()
+
