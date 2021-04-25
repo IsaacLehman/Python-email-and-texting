@@ -73,3 +73,12 @@
     Tracfone: [number]@mmst5.tracfone.com
     U.S. Cellular: [number]@email.uscc.net
     Virgin Mobile: [number]@vmobl.com
+    
+    SMTP server names (You need to update line 123 to change this)
+    ----------------------------------------------------------------------------
+    Gmail                        smtp.gmail.com
+    Outlook.com/Hotmail.com      smtp-mail.outlook.com
+    Yahoo Mail                   smtp.mail.yahoo.com
+    AT&T                         smpt.mail.att.net (port 465)
+    Comcast                      smtp.comcast.net
+    Verizon                      smtp.verizon.net (port 465)
