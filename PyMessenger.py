@@ -1,5 +1,6 @@
 '''
     Python Messaging package using the built in SMTP library.
+    
     Features:
         - Email
             - HTML
@@ -8,7 +9,7 @@
         - Sends through your Gmail account
             NOTE: gmail account must have 'Less Secure APP Access' enabled.
                   Set this in your acount security settings.
-
+                  
     Overview of provided message types:
         1. Email
             - to: example@example.com (String)
@@ -22,8 +23,7 @@
             - subject: (String)
             - body: (String)
             - recipient: DO NOT SET (auto created -> String)
-
-    Overview of Messanger:
+    Overview of Messenger:
         - username: (String)
         - password: (String)
         Provided Functions: -> Example usage below
@@ -31,35 +31,25 @@
             - close_conn()
             - send_txt(msg, one_time=False)
             - send_email(msg, one_time=False)
-
+            
     EXAMPLES:
     ----------------------------------------------------------------------------
     Example usage (one_time): -> cleaner code if sending one message
-
-        my_messanger = Messanger(<your gmail username>, <your gmail password>)
-
+        my_messenger = Messenger(<your gmail username>, <your gmail password>)
         msg = SMS(number, gateway, subject, body)
-        my_messanger.send_sms(msg, one_time=True)
-
+        my_messenger.send_sms(msg, one_time=True)
         msg = Email(to, subject, body)
-        my_messanger.send_email(msg, one_time=True)
-
-
+        my_messenger.send_email(msg, one_time=True)
     Example usage (not one_time): -> faster for sending lots of messages
-
-        my_messanger = Messanger(<your gmail username>, <your gmail password>)
-        my_messanger.open_conn()
-
+        my_messenger = Messenger(<your gmail username>, <your gmail password>)
+        my_messenger.open_conn()
         # send as many messages as you want here
         msg = SMS(number, gateway, subject, body)
-        my_messanger.send_sms(msg)
-
+        my_messenger.send_sms(msg)
         msg = Email(to, subject, body)
-        my_messanger.send_email(msg)
-
-        my_messanger.close_conn()
-
-
+        my_messenger.send_email(msg)
+        my_messenger.close_conn()
+        
     SMS GATEWAYS
     ----------------------------------------------------------------------------
     AT&T: [number]@txt.att.net
@@ -72,7 +62,7 @@
     Tracfone: [number]@mmst5.tracfone.com
     U.S. Cellular: [number]@email.uscc.net
     Virgin Mobile: [number]@vmobl.com
-
+    
     SMTP server names (You need to update line 123 to change this)
     ----------------------------------------------------------------------------
     Gmail                        smtp.gmail.com
@@ -113,7 +103,7 @@ class SMS:
     Messager
 '''
 @dataclass
-class Messanger:
+class Messenger:
     username: str # ALSO THE FROM ADDRESS
     password: str
     conn: smtplib.SMTP = None
@@ -164,4 +154,3 @@ class Messanger:
 
         if one_time:
             self.close_conn()
-
